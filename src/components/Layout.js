@@ -38,6 +38,7 @@ function Layout({ children, gutter = 10 }) {
       if (isSmallScreen) return 3;
       if (isDesktop) return 4;
       if (isWide) return 5;
+      return 3; //default value
     },
     [isMobile, isSmallScreen, isDesktop, isWide]
   );
