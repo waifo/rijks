@@ -18,6 +18,7 @@ function Home() {
   useEffect(() => {
     async function fetchData() {
       //omitting try catch block, allowing the error fallbck to ErrorBoundary
+      // Lazy loading dosen't seems possible with the api, so fetching data in single shot
       const result = await fetch(DATA_API);
       const jsonData = await result.json();
       setData(jsonData.artObjects);

@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import image from "../assets/images/error.jpg";
 
 const ErrorContainer = styled.div`
-  text-align: center;
-  margin-top: 10%;
+  background-image: url(${image});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 `;
 
 /**
@@ -23,14 +28,7 @@ class ErrorBoundary extends Component {
   }
   render() {
     if (this.state.hasError) {
-      return (
-        <ErrorContainer>
-          <>
-            <h2>Ooops...! </h2>
-            <h2>Something went wrong, try refreshing</h2>
-          </>
-        </ErrorContainer>
-      );
+      return <ErrorContainer></ErrorContainer>;
     }
     return this.props.children;
   }
